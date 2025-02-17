@@ -1,83 +1,131 @@
-# Projet Laravel - Gestion des Réservations Immobilières
+# 🏡 Projet Laravel - Gestion des Réservations Immobilières  
 
-## Introduction
+## 📌 Introduction  
 
-Ce projet a été développé dans le cadre de l'évaluation de mes compétences avec **Laravel**, **Livewire**, **Filament** et **TailwindCSS**. L'objectif de ce projet est de créer une application de gestion des réservations immobilières, permettant aux utilisateurs de consulter des propriétés, de les réserver, et de gérer leur profil ainsi que leurs réservations. Les administrateurs ont un accès complet pour gérer les utilisateurs, les réservations et les propriétés.
+Ce projet a été développé dans le cadre de l'évaluation de mes compétences avec **Laravel**, **Livewire**, **Filament** et **TailwindCSS**.  
+L'objectif est de créer une application de gestion des réservations immobilières permettant aux utilisateurs de :  
+✔️ Consulter les propriétés disponibles  
+✔️ Effectuer des réservations  
+✔️ Gérer leur profil et leurs réservations  
+✔️ Les administrateurs ont un accès complet pour gérer les utilisateurs, les réservations et les propriétés.  
 
-### Technologies utilisées :
+---
 
-- **Laravel** : Framework PHP pour le backend
-- **Livewire** : Pour des interactions dynamiques sans rechargement de page
-- **Filament** : Interface d’administration pour gérer les utilisateurs et les données
-- **TailwindCSS** : Framework CSS moderne pour un design responsive et personnalisé
+## 🛠 Technologies utilisées  
 
-## Fonctionnalités du Système
+- **Laravel** : Framework PHP pour le backend  
+- **Livewire** : Pour des interactions dynamiques sans rechargement de page  
+- **Filament** : Interface d’administration moderne et performante  
+- **TailwindCSS** : Framework CSS pour un design responsive et personnalisé  
+- **Laravel Breeze** : Système d'authentification simple et efficace  
 
-### 1. **Gestion des Propriétés**
+---
 
-Les utilisateurs peuvent consulter les propriétés sous forme de cartes, contenant les informations principales (nom, description, prix par nuit). Un bouton "Voir plus" permet d'accéder à une page avec plus de détails.
+## 🎯 Fonctionnalités du Système  
 
-![Carte Propriété](public/images/Acceuil.jpeg)
+### 1️⃣ Gestion des Propriétés 🏠  
 
-### 2. **Réservation des Propriétés**
+Les utilisateurs peuvent consulter les propriétés sous forme de cartes, contenant les informations principales :  
+✔️ Nom  
+✔️ Description  
+✔️ Prix par nuit  
+✔️ Bouton "Voir plus" pour afficher plus de détails  
 
-Un formulaire de réservation est disponible pour chaque propriété. L'utilisateur peut choisir une date de début et une date de fin. Si les dates sont déjà réservées, un message d'alerte est affiché en rouge.
+📸 *Aperçu de la liste des propriétés :*  
+![Carte Propriété](public/images/Acceuil.jpeg)  
 
-- **Non connecté** : Un message d'avertissement apparaît si l'utilisateur n'est pas connecté.
-- **Dates réservées** : Un message s'affiche si les dates choisies sont déjà réservées.
+---
 
-![Formulaire de réservation](public/images/must_login.jpeg)
+### 2️⃣ Réservation des Propriétés 📅  
 
-### 3. **Gestion des Profils Utilisateurs**
+Un formulaire de réservation permet à l'utilisateur de sélectionner une période de séjour :  
+✔️ Sélection des dates de début et de fin  
+✔️ Vérification de la disponibilité  
+✔️ Messages d'erreur en cas d'invalidité  
 
-Les utilisateurs peuvent consulter et mettre à jour leurs informations personnelles, y compris leur mot de passe.
+🛑 **Cas d'erreur :**  
+- **Utilisateur non connecté** → Alerte lui demandant de se connecter  
+- **Dates déjà réservées** → Message d'avertissement  
 
-![Profil Utilisateur](public/images/MyProfile.jpeg)
+📸 *Exemple de message lorsque l'utilisateur doit se connecter :*  
+![Formulaire de réservation](public/images/must_login.jpeg)  
 
-### 4. **Interface d’Administration avec Filament**
+---
 
-Les administrateurs peuvent accéder à une interface complète pour gérer :
-- **Les utilisateurs** : Consulter, modifier, ou affecter des rôles.
-- **Les réservations** : Consulter, annuler, ou confirmer les réservations.
-- **Les propriétés** : Ajouter, modifier, ou supprimer des propriétés.
+### 3️⃣ Gestion des Profils Utilisateurs 👤  
 
-![Tableau de bord Administrateur](public/images/bookings.jpeg)
+Les utilisateurs ont accès à un espace personnel où ils peuvent :  
+✔️ Consulter leurs informations personnelles  
+✔️ Mettre à jour leurs données  
+✔️ Modifier leur mot de passe  
 
-### 5. **Authentification et Sécurité**
+📸 *Exemple d'affichage du profil utilisateur :*  
+![Profil Utilisateur](public/images/MyProfile.jpeg)  
 
-Le système utilise **Laravel Breeze** pour l'authentification des utilisateurs, avec des options pour créer un compte, se connecter et réinitialiser le mot de passe.
+---
 
-## Structure du Projet
+### 4️⃣ Interface d’Administration avec Filament 🛠  
 
-### 1. **Base de Données**
+Les administrateurs bénéficient d'un tableau de bord avec plusieurs options :  
+✔️ **Gestion des utilisateurs** → Création, modification, suppression  
+✔️ **Gestion des réservations** → Consultation, validation, annulation  
+✔️ **Gestion des propriétés** → Ajout, modification, suppression  
 
-Le projet repose sur deux tables principales :
+📸 *Exemple de gestion des réservations dans l'interface administrateur :*  
+![Tableau de bord Administrateur](public/images/bookings.jpeg)  
 
-- **Propriétés** (`properties`) : Contient les informations des propriétés.
-- **Réservations** (`bookings`) : Contient les informations des réservations effectuées par les utilisateurs.
+---
 
-### 2. **Routes Principales**
+### 5️⃣ Authentification et Sécurité 🔒  
 
-- `/` : Page d'accueil affichant les propriétés disponibles
-- `/profile` : Page de profil de l'utilisateur
-- `/mes-reservations` : Page des réservations de l'utilisateur
-- `/admin` : Page d'administration, accessible uniquement aux administrateurs
+L'application implémente **Laravel Breeze** pour gérer l'authentification.  
+Fonctionnalités incluses :  
+✔️ Inscription / Connexion  
+✔️ Réinitialisation du mot de passe  
+✔️ Gestion des rôles (utilisateur & administrateur)  
 
-## Instructions pour Exécuter le Projet Localement
+---
 
-### **Cas 1 : Utilisation d'un Fichier Zip**
+## 🗄️ Structure du Projet  
 
-1. **Télécharger et Extraire le Fichier Zip**
-   Téléchargez le fichier zip contenant le projet et extrayez-le dans un dossier sur votre machine.
+### 🏗 1. Base de Données  
 
-2. **Configurer l'Environnement Local**
-   - Ouvrez un terminal et naviguez vers le dossier extrait.
-   - Copiez le fichier `.env.example` en `.env` :
+L'application repose sur deux tables principales :  
+
+- **Propriétés** (`properties`) → Contient les informations sur les biens immobiliers.  
+- **Réservations** (`bookings`) → Contient les détails des réservations effectuées.  
+
+---
+
+### 🔗 2. Routes Principales  
+
+| URL                     | Description |
+|-------------------------|------------|
+| `/`                     | Page d'accueil affichant les propriétés |
+| `/profile`              | Page de gestion du profil utilisateur |
+| `/mes-reservations`     | Historique des réservations |
+| `/admin`                | Panneau d’administration (accessible uniquement aux administrateurs) |
+
+---
+
+## 🚀 Instructions pour Exécuter le Projet Localement  
+
+### 📂 Cas 1 : Utilisation d'un Fichier ZIP  
+
+1️⃣ **Télécharger et Extraire le Fichier ZIP**  
+   - Décompressez l'archive et ouvrez le dossier du projet.  
+
+2️⃣ **Configurer l'Environnement Local**  
+   - Ouvrez un terminal et naviguez dans le dossier du projet :  
+     ```bash
+     cd mon-projet-laravel
+     ```
+   - Copier le fichier `.env.example` et le renommer en `.env` :  
      ```bash
      cp .env.example .env
      ```
 
-3. **Installer les Dépendances**
-   Installez toutes les dépendances PHP avec Composer :
+3️⃣ **Installer les Dépendances**  
    ```bash
    composer install
+   npm install && npm run build
